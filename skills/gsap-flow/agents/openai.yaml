@@ -1,0 +1,4 @@
+interface:
+  display_name: "GSAP Flow"
+  short_description: "Sequence entrances by viewport and responsive rows"
+  default_prompt: "Use $gsap-flow to coordinate initial viewport entrances, responsive row staggers, and scroll reveals with safe SPA lifecycle handling."

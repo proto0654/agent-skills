@@ -1,0 +1,96 @@
+model = "gpt-6.1-terra"
+model_reasoning_effort = "high"
+notify = [ "C:\\Users\\proto\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\db1cc9e06a6c48d6\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+[mcp_servers]
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\proto\AppData\Local\OpenAI\Codex\runtimes\cua_node\db1cc9e06a6c48d6\bin\node_repl.exe'
+env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY", "CODEX_WINDOWS_REGISTERED_CORE"]
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\proto\AppData\Local\OpenAI\Codex\runtimes\cua_node\db1cc9e06a6c48d6\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\proto\AppData\Local\OpenAI\Codex\runtimes\cua_node\db1cc9e06a6c48d6\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\proto\.codex;C:\Users\proto\AppData\Local\OpenAI\Codex\runtimes\cua_node\db1cc9e06a6c48d6\bin\node_modules'
+CODEX_HOME = 'C:\Users\proto\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1103.32239"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/proto/.codex/plugins/cache/openai-bundled/browser/26.1103.32239/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-766555d9-9086-4112-9186-e99399e9a1d4'
+CODEX_CLI_PATH = 'C:\Users\proto\AppData\Local\OpenAI\Codex\bin\f71a721e0e6193a9\codex.exe'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+
+[desktop]
+followUpQueueMode = "steer"
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = '\\?\C:\Users\proto\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\proto\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[windows]
+sandbox = "elevated"
+
+[projects.'E:\WebGL\molecule']
+trust_level = "trusted"
+
+[projects.'E:\bitrix-projects\eastagro']
+trust_level = "trusted"
+
+[projects.'E:\Electron\body_debugger']
+trust_level = "trusted"
+
+[projects.'E:\bitrix-projects\Aeroline-bitrix']
+trust_level = "trusted"
+
+[projects.'E:\vue-projects\rs-saas']
+trust_level = "trusted"
+
+[projects.'E:\archive-work\Знак вечности']
+trust_level = "trusted"
+
+[projects.'E:\archive-work\protransfer']
+trust_level = "trusted"

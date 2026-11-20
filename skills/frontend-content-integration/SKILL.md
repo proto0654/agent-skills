@@ -1,0 +1,36 @@
+---
+name: frontend-content-integration
+description: Connect approved frontend markup or static prototypes to editable backend content in WordPress, 1C-Bitrix, or a custom stack. Use for full or partial CMS integration, completing unfinished field bindings, or auditing content still hardcoded after a migration.
+---
+
+# Frontend Content Integration
+
+Preserve the approved layout, responsive variants, routes, semantics and interactions. Every editorial or business value in scope must have an authoritative source and a working path from its editor to every public occurrence.
+
+## Inventory the frontend and backend
+
+1. Read project instructions, content schema, routes, manifests and lockfiles. Identify the approved frontend, the real runtime entry points, existing editors, data owners, seed tools and a safe verification environment. Apply the project's planning and approval rules before editing.
+2. Inventory from the frontend first. Walk each in-scope route and layout recursively through shared shell, includes, imported components, template variants, conditional branches, lists and nested rows. Follow rendered references to data, styles and scripts. Include detail and legal pages, mobile menus, slide variants, popups, forms and success states that belong to those routes.
+3. Record each distinct leaf and its occurrences. Check headlines and highlighted fragments, captions, badges, CTA labels and destinations, contacts, prices and units, download links, editorial images and video, backgrounds, alt text and content-bearing attributes, SEO/Open Graph and structured data. Inspect client-side strings, hydration/bootstrap payloads, CSS `content` and background URLs alongside template markup. Expand repeaters by field and check their empty, populated and conditional branches.
+4. Keep a working coverage map with route/component, leaf, editor path and source key, render targets, and verification status. Classify explicit exceptions with their source or reason, such as technical i18n strings, decorative assets, derived values and data owned by an external service. A reused value has one owner and all its render targets. An inventory built only from existing fields or binding markers cannot reveal missing bindings.
+
+## Model for the editor
+
+- Reuse the project's existing data and admin conventions. Put shared brand, contacts and common settings in one global owner. Put page-specific content with its page. Use ordered, named repeaters for page-local lists and linked records for items edited independently or reused across routes. Keep an item's text, links and media in the same row. Use native titles, links, file/store references and typed fields where they already express the contract.
+- Put controls in page order with meaningful labels in the editors' language, explicit add/remove/reorder controls and media previews where supported. Avoid raw JSON, parallel lists and opaque asset tokens for everyday editorial work. Use rich text for prose the editor manages as a unit, such as an article body or legal document. Model distinct controls and list items separately from prose.
+- Preserve stable identifiers, existing saved values and the project's authority boundaries. When a value comes from an integration such as product or tariff data, bind to that source and avoid a duplicate editable copy. Keep business inputs configurable through their existing owner and keep application rules and derived output in the domain layer.
+
+Choose the implementation that fits the installed stack.
+
+- **WordPress.** Reuse existing pages, post types, menus, media attachments and supported field tooling. If the project uses Carbon Fields, follow its established containers and repeaters. Keep data definitions and imports in the existing content layer and rendering in the theme. Preserve native hooks, routing, and first-response rendering where the project uses them.
+- **1C-Bitrix.** Use the established settings element, infoblock properties, linked/ordered elements and file properties. Reuse the project's loaders, stable codes and migrations. Follow relationships into nested elements and invalidate the affected component or managed caches. Check whether an infoblock or DB is shared with production before any writes.
+- **Custom backend.** Reuse the existing schema, editor, storage and API or view-model boundary. For a new editorial field, wire editing, validation, persistence and runtime consumption together. Keep SSR/API/client hydration in sync where applicable. Verify which store and configuration actually serve the target environment.
+
+## Implement and prove coverage
+
+1. Start with a representative vertical slice. Carry existing reference content into the chosen fields and media references using the project's seed or migration workflow. A repeat run should preserve editor changes and avoid duplicate records or media. Use the project's approval and rollback workflow for schema changes or shared data.
+2. Complete every in-scope branch using the coverage map. Bind scalar fields, nested rows, relations and attributes through the real render path. Preserve HTML structure, hooks, responsive media and interactions. Render each value with context-appropriate escaping or rich-text sanitization. Feed repeated occurrences, client behavior and relevant metadata from the same effective value.
+3. Handle absent required values and intentional clears explicitly. Seed the approved starting values. Missing, cleared, false and zero values have distinct meanings where the model supports them. Keep demo/preview fixtures outside the normal CMS render path. A project-defined fallback must have a documented trigger and source. Check for stale copy resurfacing through templates, CSS, API defaults, client hydration, caches or localization.
+4. Rewalk the frontend independently of the field list and reconcile both directions. Every editorial leaf needs a working source, and every exposed field in scope needs a consumer. Look for unused fields, duplicate bindings, alternate templates and stale literals. Use targeted source/DOM checks for likely omissions and inspect the actual runtime response. A clean build or a marker-to-field check alone leaves coverage unproven.
+5. Use the real editor in an authorized local or test environment when available. Save recognizable values, reload the editor, then verify the actual page and every occurrence of the changed value. Exercise every in-scope section and rendering branch. Group edits by field type and cover distinct bindings, including nested rows, reordered/removed items, replaced/cleared media, edited URLs, explicit empty values and shared fields on multiple routes. Compare reference and runtime on relevant viewports and interaction states. Restore temporary changes and confirm cache invalidation where used.
+6. Report coverage per route or shared component, including editor locations, exceptions and verification evidence. Use the project's tests, lint and build. Separate source-level checks from live save-and-render checks and identify any blocked bindings or unverified paths. A migration is complete only when the coverage map has no unexplained leaves and every in-scope binding has runtime evidence.

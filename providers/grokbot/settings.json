@@ -1,0 +1,21 @@
+{
+  "accountScopes": {},
+  "activeAccountScope": "5bcaa398bd6d9736c867d5d01683e7280c163c6670dafc4de9615832b8ad87ed",
+  "autoUpdateWhenIdleOptIn": false,
+  "botColorInChatEnabled": false,
+  "egressTunnelEnabled": false,
+  "hasSeenOnboarding": true,
+  "hasSeenOnboardingAccountScope": "5bcaa398bd6d9736c867d5d01683e7280c163c6670dafc4de9615832b8ad87ed",
+  "localEgressAllowed": true,
+  "localToolPermission": "ask",
+  "mcpBoxServers": [],
+  "mcpCustomInstructions": {},
+  "mcpCustomInstructionsByServerId": {},
+  "mcpDisabledToolsByServerId": {},
+  "messagesEnabled": false,
+  "settingsMigrations": [
+    "downgrade-persisted-max-fast"
+  ],
+  "version": 1,
+  "webauthnProxyEnabled": true
+}

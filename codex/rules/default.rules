@@ -1,0 +1,6 @@
+prefix_rule(pattern=["C:\\Users\\proto\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe", "-Command", "& 'C:\\Program Files\\nodejs\\npm.cmd' run build"], decision="allow")
+prefix_rule(pattern=["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tmp/ssh_run.ps1", "hostname"], decision="allow")
+prefix_rule(pattern=["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tmp/ssh_run.ps1", "/usr/local/bin/php8.2 /tmp/inspect-advantages.php", "-ScpLocal", "tmp/inspect-advantages.php"], decision="allow")
+prefix_rule(pattern=["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tmp/ssh_run.ps1", "ls -la /home/e/eastagro/eastagro.ru/public_html/local/templates/eastagro; rg -n advantages /home/e/eastagro/eastagro.ru/public_html/index.php"], decision="allow")
+prefix_rule(pattern=["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tmp/ssh_run.ps1", "find /home/e/eastagro/eastagro.ru/public_html -path \"*/advantages*\" -type f -not -path \"*/bitrix/*\" | head -30"], decision="allow")
+prefix_rule(pattern=["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tmp/ssh_run.ps1", "cat /home/e/eastagro/eastagro.ru/public_html/local/templates/eastagro/components/bitrix/news.list/advantages/template.php"], decision="allow")
